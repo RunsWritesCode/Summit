@@ -12,12 +12,14 @@ public class Summit implements Serializable {
     private Integer height;
     private String range;
     private String country;
+    private Boolean climbed;
 
     public Summit(String name, Integer height, String range, String country) {
         this.name = name;
         this.height = height;
         this.range = range;
         this.country = country;
+        this.climbed = false;
     }
 
     public String getName() {
@@ -51,4 +53,6 @@ public class Summit implements Serializable {
     public void setCountry(String country) {
         this.country = country;
     }
+
+//    add setter for climbed
 }

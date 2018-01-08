@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SummitsActivity"></activity>
+        <activity android:name=".SummitsActivity" />
+        <activity android:name=".BaggedActivity" />
+        <activity android:name=".ToClimbActivity" />
+        <activity android:name=".AddNewActivity"></activity>
     </application>
 
 </manifest>

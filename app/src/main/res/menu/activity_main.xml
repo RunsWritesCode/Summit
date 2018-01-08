@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_welcome"
+        android:title="@string/welcome"/>
+    <item
+        android:id="@+id/action_summits"
+        android:title="@string/summits" />
+    <item android:id="@+id/action_to_climb"
+        android:title="@string/to_climb"/>
+    <item android:id="@+id/action_climbed"
+        android:title="@string/climbed"/>
+    <item android:id="@+id/action_add_new"
+        android:title="@string/add_new"/>
 </menu>

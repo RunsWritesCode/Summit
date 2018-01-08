@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Summit</string>
+    <string name="welcome">Welcome</string>
+    <string name="summits">Summits</string>
+    <string name="to_climb">To Climb</string>
+    <string name="climbed">Bagged</string>
+    <string name="add_new">Add new</string>
+    <string name="montblanc"></string>
 </resources>
