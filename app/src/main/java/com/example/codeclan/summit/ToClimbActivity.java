@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class ToClimbActivity extends AppCompatActivity {
 
@@ -13,7 +16,18 @@ public class ToClimbActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_climb);
+
+        //        where climbed is false
+
+        Summits summits = new Summits();
+        ArrayList<Summit> list = summits.getList();
+
+        SummitsAdapter summitAdapter = new SummitsAdapter(this, list);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(summitAdapter);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
