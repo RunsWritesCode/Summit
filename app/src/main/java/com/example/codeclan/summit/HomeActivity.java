@@ -3,9 +3,11 @@ package com.example.codeclan.summit;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -54,4 +56,13 @@ public class HomeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+
+    public void onSummitButtonClicked(View button) {
+        Log.d(getClass().toString(), "onSummitButtonClicked was called");
+
+            Intent intent = new Intent(this, SummitsActivity.class);
+            startActivity(intent);
+
+        }
+    }
+

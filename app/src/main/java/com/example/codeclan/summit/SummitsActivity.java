@@ -72,9 +72,9 @@ public class SummitsActivity extends AppCompatActivity {
         Summit summit = (Summit) listItem.getTag();
         Log.d("Summit name:", summit.getName());
 
-//        Intent intent = new Intent(this, SummitActivity.class);
-//        intent.putExtra("summit", summit);
-//        startActivity(intent);
+        Intent intent = new Intent(this, SummitActivity.class);
+        intent.putExtra("summit", summit);
+        startActivity(intent);
 
     }
 

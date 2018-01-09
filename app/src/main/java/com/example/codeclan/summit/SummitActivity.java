@@ -24,6 +24,8 @@ public class SummitActivity extends AppCompatActivity {
             Intent intent = getIntent();
             Summit summit = (Summit)intent.getSerializableExtra("summit");
             Log.d("Summit name:", summit.getName());
+
+            
         }
 
     @Override
