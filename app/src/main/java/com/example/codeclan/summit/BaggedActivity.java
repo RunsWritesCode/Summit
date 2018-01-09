@@ -17,7 +17,7 @@ public class BaggedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bagged);
 
-//        where climbed is true
+
 
         Summits summits = new Summits();
         ArrayList<Summit> list = summits.getList();

@@ -33,11 +33,11 @@ public class SummitsAdapter extends ArrayAdapter<Summit> {
         TextView height =  (TextView) listItemView.findViewById(R.id.height);
         height.setText(currentSummit.getHeight().toString());
 
-        TextView range = (TextView) listItemView.findViewById(R.id.range);
-        range.setText(currentSummit.getRange());
-
-        TextView country = (TextView) listItemView.findViewById(R.id.country);
-        country.setText(currentSummit.getRange());
+//        TextView range = (TextView) listItemView.findViewById(R.id.range);
+//        range.setText(currentSummit.getRange());
+//
+//        TextView country = (TextView) listItemView.findViewById(R.id.country);
+//        country.setText(currentSummit.getRange());
 
         listItemView.setTag(currentSummit);
 
