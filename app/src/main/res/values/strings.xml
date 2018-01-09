@@ -7,4 +7,10 @@
     <string name="add_new">Add new</string>
     <string name="montblanc"></string>
     <string name="summit_button">Get high!</string>
+    <string name="name">name</string>
+    <string name="height">height</string>
+    <string name="range">range</string>
+    <string name="country">country</string>
+    <string name="ToClimb">To Climb</string>
+    <string name="Climbed">Bagged!</string>
 </resources>

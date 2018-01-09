@@ -19,6 +19,7 @@
         <activity android:name=".SummitsActivity" />
         <activity android:name=".BaggedActivity" />
         <activity android:name=".ToClimbActivity" />
+        <activity android:name=".SummitActivity" />
         <activity android:name=".AddNewActivity"></activity>
     </application>
 
