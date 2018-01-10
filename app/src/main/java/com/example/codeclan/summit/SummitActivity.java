@@ -1,13 +1,22 @@
 package com.example.codeclan.summit;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.ToggleButton;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 /**
  * Created by sophiemullins on 06/01/2018.
@@ -21,6 +30,8 @@ public class SummitActivity extends AppCompatActivity {
     TextView height;
     TextView range;
     TextView country;
+    Summit currentSummit;
+    ToggleButton climbedStat;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +42,18 @@ public class SummitActivity extends AppCompatActivity {
             height = findViewById(R.id.height);
             range = findViewById(R.id.range);
             country = findViewById(R.id.country);
+            climbedStat = findViewById(R.id.toggleClimb);
 
             Intent intent = getIntent();
-            Summit summit = (Summit)intent.getSerializableExtra("summit");
-            Log.d("Summit name:", summit.getName());
+            currentSummit = (Summit)intent.getSerializableExtra("summit");
+            Log.d("Summit name:", currentSummit.getName());
 
-            name.setText(summit.getName());
-            height.setText(summit.getHeight().toString());
-            range.setText(summit.getRange());
-            country.setText(summit.getCountry());
+            climbedStat.setChecked(currentSummit.getClimbed());
+
+            name.setText(currentSummit.getName());
+            height.setText(currentSummit.getHeight().toString());
+            range.setText(currentSummit.getRange());
+            country.setText(currentSummit.getCountry());
 
         }
 
@@ -82,6 +96,35 @@ public class SummitActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+        public void onToggleClimbClicked(View button) {
+
+
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+            String mySummits = sharedPref.getString("MySummits", new ArrayList<Summit>().toString());
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            Gson gson = new Gson();
+            TypeToken<ArrayList<Summit>> summitArrayList = new TypeToken<ArrayList<Summit>>(){};
+            ArrayList<Summit> list = gson.fromJson(mySummits, summitArrayList.getType());
+
+            for (Summit summit: list) {
+                if (summit.getName().equals(currentSummit.getName())) {
+                    if (currentSummit.getClimbed()) {
+                        summit.setNotClimbed();
+                    }
+                    else {
+                        summit.setClimbed();
+                    }
+                }
+            }
+            editor.putString("MySummits", gson.toJson(list));
+            editor.apply();
+
+        }
+
+
 
 
 

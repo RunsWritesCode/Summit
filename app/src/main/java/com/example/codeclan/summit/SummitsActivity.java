@@ -33,8 +33,7 @@ public class SummitsActivity extends AppCompatActivity {
         ArrayList<Summit> list = gson.fromJson(mySummits, summitArrayList.getType());
         Log.d("mySummits", list.toString());
 
-//        replace next 2 lines with data from shared prefs. convert to java arraylist.
-
+//        first seed for shared prefs - only needed if app deleted (but not required for app functionality even in that case).
 //
 //        Summits summits = new Summits();
 //        ArrayList<Summit> list = summits.getList();
@@ -45,7 +44,7 @@ public class SummitsActivity extends AppCompatActivity {
 //        Gson gson = new Gson();
 //        editor.putString("MySummits", gson.toJson(list));
 //        editor.apply();
-//
+
         SummitsAdapter summitAdapter = new SummitsAdapter(this, list);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(summitAdapter);

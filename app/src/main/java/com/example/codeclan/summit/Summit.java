@@ -56,7 +56,9 @@ public class Summit implements Serializable {
 
     public Boolean getClimbed() { return climbed; }
 
-    public void setClimbed(Boolean climbed) {this.climbed = false; }
+    public void setClimbed() {this.climbed = true; }
+
+    public void setNotClimbed() {this.climbed = false; }
 
 
 }
