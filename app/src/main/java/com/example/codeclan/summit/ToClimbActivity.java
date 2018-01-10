@@ -3,9 +3,11 @@ package com.example.codeclan.summit;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -75,5 +77,15 @@ public class ToClimbActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void getSummit(View listItem) {
+        Summit summit = (Summit) listItem.getTag();
+        Log.d("Summit name:", summit.getName());
+
+        Intent intent = new Intent(this, SummitActivity.class);
+        intent.putExtra("summit", summit);
+        startActivity(intent);
+
     }
 }
