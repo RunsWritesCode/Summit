@@ -13,4 +13,13 @@
     <string name="country">country</string>
     <string name="ToClimb">To Climb</string>
     <string name="Climbed">Bagged!</string>
+    <string name="addNewMessage">Add a new summit</string>
+    <string name="addNew">Add a new summit</string>
+    <string name="editName">Summit name</string>
+    <string name="editRange">Mountain range</string>
+    <string name="editCountry">Country</string>
+    <string name="editHeight">Height (m)</string>
+    <string name="addNewSubmit">Submit</string>
+    <string name="preference_file_key">My Summits</string>
+
 </resources>
