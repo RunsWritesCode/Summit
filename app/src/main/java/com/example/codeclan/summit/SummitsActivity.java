@@ -35,17 +35,17 @@ public class SummitsActivity extends AppCompatActivity {
 
 //        replace next 2 lines with data from shared prefs. convert to java arraylist.
 
-
+//
 //        Summits summits = new Summits();
 //        ArrayList<Summit> list = summits.getList();
-
+//
 //        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sharedPref.edit();
 //
 //        Gson gson = new Gson();
 //        editor.putString("MySummits", gson.toJson(list));
 //        editor.apply();
-
+//
         SummitsAdapter summitAdapter = new SummitsAdapter(this, list);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(summitAdapter);
