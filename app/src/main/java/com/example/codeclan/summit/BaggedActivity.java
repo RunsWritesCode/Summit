@@ -17,12 +17,20 @@ public class BaggedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bagged);
 
-
-
         Summits summits = new Summits();
         ArrayList<Summit> list = summits.getList();
 
-        SummitsAdapter summitAdapter = new SummitsAdapter(this, list);
+        ArrayList<Summit> baggedList = new ArrayList<>();
+
+        for (Summit summit: list) {
+            if (summit.getClimbed() == true)
+            {
+                baggedList.add(summit);
+            }
+
+        }
+
+        SummitsAdapter summitAdapter = new SummitsAdapter(this, baggedList);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(summitAdapter);
 

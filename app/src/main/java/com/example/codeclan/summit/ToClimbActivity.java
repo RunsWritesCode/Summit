@@ -17,12 +17,20 @@ public class ToClimbActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_climb);
 
-        //        where climbed is false
-
         Summits summits = new Summits();
         ArrayList<Summit> list = summits.getList();
 
-        SummitsAdapter summitAdapter = new SummitsAdapter(this, list);
+        ArrayList<Summit> toClimbList = new ArrayList<>();
+
+        for (Summit summit: list) {
+            if (summit.getClimbed() == false)
+            {
+                toClimbList.add(summit);
+            }
+
+        }
+
+        SummitsAdapter summitAdapter = new SummitsAdapter(this, toClimbList);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(summitAdapter);
     }

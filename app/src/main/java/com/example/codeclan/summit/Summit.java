@@ -54,5 +54,9 @@ public class Summit implements Serializable {
         this.country = country;
     }
 
-//    add setter for climbed
+    public Boolean getClimbed() { return climbed; }
+
+    public void setClimbed(Boolean climbed) {this.climbed = false; }
+
+
 }
