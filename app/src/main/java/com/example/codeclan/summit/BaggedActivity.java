@@ -1,6 +1,8 @@
 package com.example.codeclan.summit;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 
 public class BaggedActivity extends AppCompatActivity {
@@ -18,10 +23,15 @@ public class BaggedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bagged);
-        
 
-        Summits summits = new Summits();
-        ArrayList<Summit> list = summits.getList();
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        String mySummits = sharedPref.getString("MySummits", new ArrayList<Summit>().toString());
+
+        Gson gson = new Gson();
+        TypeToken<ArrayList<Summit>> summitArrayList = new TypeToken<ArrayList<Summit>>(){};
+        ArrayList<Summit> list = gson.fromJson(mySummits, summitArrayList.getType());
+
 
         ArrayList<Summit> baggedList = new ArrayList<>();
 
