@@ -5,6 +5,7 @@
     android:id="@+id/list_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/montblanc"
     tools:context="com.example.codeclan.summit.SummitsActivity">
 
     <ListView
