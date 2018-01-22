@@ -6,4 +6,5 @@
     <color name="itemBackground">#8c1b236b</color>
     <color name="deepRed">#680404</color>
     <color name="mountainGreen">#25302d</color>
+    <color name="delete">#81f41b17</color>
 </resources>

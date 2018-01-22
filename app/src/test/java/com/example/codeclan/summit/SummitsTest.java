@@ -15,4 +15,10 @@ public class SummitsTest {
         Summits summits = new Summits();
         assertEquals(15, summits.getList().size());
     }
+
+    @Test
+    public void canDeleteSummit() {
+        Summits summits = new Summits();
+        assertEquals(15, summits.getList().size());
+    }
 }

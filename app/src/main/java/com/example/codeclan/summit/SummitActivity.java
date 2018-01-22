@@ -124,8 +124,29 @@ public class SummitActivity extends AppCompatActivity {
 
         }
 
+        public void onDeleteButtonClicked(View button) {
+
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+            String mySummits = sharedPref.getString("MySummits", new ArrayList<Summit>().toString());
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            Gson gson = new Gson();
+            TypeToken<ArrayList<Summit>> summitArrayList = new TypeToken<ArrayList<Summit>>(){};
+            ArrayList<Summit> list = gson.fromJson(mySummits, summitArrayList.getType());
 
 
+            for (Summit summit: list) {
+                if (summit.getName().equals(currentSummit.getName())) {
+                    list.remove(summit);
+                }
+            }
+            editor.putString("MySummits", gson.toJson(list));
+            editor.apply();
+
+            Intent intent = new Intent(this, SummitsActivity.class);
+            startActivity(intent);
+        }
 
 
     }

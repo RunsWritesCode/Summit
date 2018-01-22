@@ -22,5 +22,6 @@
     <string name="addNewSubmit">Submit</string>
     <string name="preference_file_key">My Summits</string>
     <string name="toggleClimb">Climbed</string>
+    <string name="delete_button">delete</string>
 
 </resources>
